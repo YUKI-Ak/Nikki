@@ -1,24 +1,66 @@
-# README
+# アプリケーション名
+Nikki
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+- 他のユーザーと記事の共有ができます。
+- 他のユーザーの記事に対してコメントをすることができます。
+- 日々の日記やメモを作成・公開ができます。
 
-Things you may want to cover:
+# URL
+未実装
 
-* Ruby version
+# テスト用アカウント
+未実装
 
-* System dependencies
+# データベース設計
 
-* Configuration
 
-* Database creation
+# テーブル設計
 
-* Database initialization
+## users テーブル
 
-* How to run the test suite
+| Column                  | Type    | Options                  |
+| ----------------------- | ------- | ------------------------ |
+| nickname                | string  | null: false              |
+| email                   | string  | null: false, unique:true |
+| encrypted_password      | string  | null: false              |
+| last_name               | string  | null: false              |
+| first_name              | string  | null: false              |
+| lname_kana              | string  | null: false              |
+| fname_kana              | string  | null: false              |
+| address                 | string  | null: false              |
+| tel                     | integer | null: false              |
+| birthday                | date    | null: false              |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- has_many :articles
+- has_many :comments
 
-* ...
+## article テーブル
+
+| Column             | Type       | Options                           |
+| ------------------ | -----------| --------------------------------- |
+| title              | string     | null: false, limit:50             |
+| content            | text       | null: false                       |
+| user               | references | null: false, foreign_key:true     |
+
+<!-- imageはActiveStorageにて実装予定 -->
+
+### Association
+
+- belongs_to :user
+- has_many :comments
+
+## comment テーブル
+
+| Column           | Type         | Options                        |
+| ---------------- | ------------ | ------------------------------ |
+| comment          | text         | null: false, limit:200         |
+| user             | references   | null: false, foreign_key:true  |
+| article          | references   | null: false, foreign_key:true  |
+
+### Association
+
+- belongs_to :user
+- belongs_to :article
