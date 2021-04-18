@@ -1,2 +1,10 @@
 <h1>top page</h1>
 
+<%= link_to '記事の作成', new_article_path %>
+
+<% @articles.each do |article| %>
+  <p>
+    <strong>Title:</strong>
+    <%= article.title %>
+  </p>
+<% end %>
