@@ -5,6 +5,6 @@
 <% @articles.each do |article| %>
   <p>
     <strong>Title:</strong>
-    <%= article.title %>
+    <%= link_to article.title, article_path(article) %>
   </p>
 <% end %>
