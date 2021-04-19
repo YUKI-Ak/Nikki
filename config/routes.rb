@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: "users#index"
+  root to: "articles#index"
+  resources :articles
 end
