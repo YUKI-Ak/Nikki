@@ -28,8 +28,6 @@ Nikki
 | first_name              | string  | null: false              |
 | lname_kana              | string  | null: false              |
 | fname_kana              | string  | null: false              |
-| address                 | string  | null: false              |
-| tel                     | integer | null: false              |
 | birthday                | date    | null: false              |
 
 ### Association

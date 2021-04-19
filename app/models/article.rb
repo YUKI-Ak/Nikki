@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  belongs_to :user
 
   with_options presence: true do
     validates :title,
@@ -6,3 +7,4 @@ class Article < ApplicationRecord
     validates :content
   end
 end
+
