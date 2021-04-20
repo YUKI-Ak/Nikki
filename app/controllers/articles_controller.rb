@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_index, only: [:edit, :update, :destroy]
 
 
   def index
@@ -52,6 +54,12 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
+  end
+
+  def redirect_index
+    unless current_user.id == @article.user.id
+      redirect_to root_path
+    end
   end
 
 end
