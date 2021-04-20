@@ -8,6 +8,10 @@
   <%= @article.content %>
 </p>
 
-<%= link_to '記事の編集', edit_article_path(@article) %>
+<% if user_signed_in? %>
+  <% if current_user.id == @article.user_id %>
+    <%= link_to '記事の編集', edit_article_path(@article) %>
+  <% end %>
+<% end %>
 
 <%= link_to 'トップページに戻る', root_path %>
