@@ -1,0 +1,10 @@
+<h2>新規コメント作成</h2>
+  <%= form_with model: [ @article, @article.comments.build ] , local: true do |f| %>
+    <p>
+      <%= f.label :comment %>
+      <%= f.text_area :comment %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>

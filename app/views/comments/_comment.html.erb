@@ -1,0 +1,7 @@
+<h2>コメント一覧</h2>
+<% @article.comments.each do |c| %>
+  <p>
+    <%= c.user.nickname %>
+    <%= c.comment %>
+  </p>
+<% end %>
