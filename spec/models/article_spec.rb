@@ -20,7 +20,7 @@ RSpec.describe Article, type: :model do
       end
 
       it "titleが50文字以上では登録できない" do
-        @article.title = 'a' * 51
+        @article.title = Faker::Lorem.characters(number: 51)
         @article.valid?
         expect(@article.errors.full_messages).to include("Title is too long (maximum is 50 characters)")
       end
