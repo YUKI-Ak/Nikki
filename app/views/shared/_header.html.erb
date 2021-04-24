@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nikki</font></font></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="ナビゲーションの切り替え">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href= root_path><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（電流）</font></font></span></a>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            <%= link_to current_user.nickname, root_path, class: "nav-link" %>
+          </font></font>
+        </li>
+        <li class="nav-item">
+          <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </font></font>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+          </font></font>
+        </li>
+        <li class="nav-item">
+          <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+          </font></font>
+        </li>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="探す" aria-label="探す">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">探す</font></font></button>
+    </form>
+  </div>
+</nav>
