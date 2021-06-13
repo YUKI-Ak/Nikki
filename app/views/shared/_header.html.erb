@@ -7,8 +7,16 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href= root_path><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（電流）</font></font></span></a>
+        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（電流）</font></font></span>
       </li>
+      <li class="nav-item active">
+        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          <%= link_to '記事の作成', new_article_path, class: "nav-link" %>
+        </font></font><span class="sr-only"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（電流）</font></font></span>
+      </li>
+
       <% if user_signed_in? %>
         <li class="nav-item">
           <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -33,9 +41,11 @@
         </li>
       <% end %>
     </ul>
+
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="探す" aria-label="探す">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">探す</font></font></button>
     </form>
   </div>
 </nav>
+

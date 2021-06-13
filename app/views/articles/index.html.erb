@@ -1,10 +1,29 @@
-<h1>top page</h1>
+<body>
 
-<%= link_to '記事の作成', new_article_path %>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebar" style="padding-bottom:100vh" class="col-2 d-md-block bg-secondary sidebar_fixed collapse">
+      <div class="sticky-top pt-3">
+        <h6 class="sticky-top d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-light">
+          <span>新着記事</span>
+          <a class="d-flex align-items-center text-light" href="#" aria-label="Add a new report">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-auto">
+          <% @articles.each do |article| %>
+            <li class="nav-item">
+              <%= link_to article.title, article_path(article), class: "nav-link active" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 
-<% @articles.each do |article| %>
-  <p>
-    <strong>Title:</strong>
-    <%= link_to article.title, article_path(article) %>
-  </p>
-<% end %>
+    <div style="padding-top:12px" class="col-10 bg-success">
+      <h1>top page</h1>
+    </div>
+  </div>
+</div>
+
+</body>
