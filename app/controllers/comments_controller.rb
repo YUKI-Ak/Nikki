@@ -7,14 +7,17 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = @article.comments.find(params[:id])
-    @comment.destroy
-
     unless current_user.id == @article.user.id || current_user.id == @comment.user.id
       redirect_to root_path
     end
 
-    redirect_to article_path(@article), notice: "コメントは正常に削除されました。"
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      redirect_to article_path(@article), notice: "コメントは正常に削除されました。"
+    else
+      flash.now[:alert] = 'コメント削除に失敗しました'
+      render article_path(@article)
+    end
   end
 
   private

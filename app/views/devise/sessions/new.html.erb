@@ -14,11 +14,11 @@
 
       <div class="row justify-content-center py-4">
         <% if devise_mapping.rememberable? %>
-          <%= f.check_box :remember_me %>
-          <%= f.label "ログイン状態を保持する" %>
+          <%# <%= f.check_box :remember_me %>
+          <%# <%= f.label "ログイン状態を保持する" %>
         <% end %>
       </div>
-    
+
         <%= f.submit "ログイン" ,class:"btn btn-primary" %>
     <% end %>
   </main>

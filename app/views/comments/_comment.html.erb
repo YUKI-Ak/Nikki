@@ -6,7 +6,7 @@
 
     <% if user_signed_in? %>
       <% if current_user.id == @article.user_id || current_user.id == c.user_id %>
-        <%= link_to '削除', article_comment_path(@article, c), method: :delete, data: { confirm: '削除しますか?' } %>
+        <%= button_to '削除', article_comment_path(@article, c), method: :delete %>
       <% end %>
     <% end %>
   </p>
