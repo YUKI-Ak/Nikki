@@ -1,14 +1,16 @@
-<h2>コメント一覧</h2>
+<p class="h2 row"><コメント一覧></p>
+
 <% @article.comments.each do |c| %>
-  <p>
-    <%= c.user.nickname %>
-    <%= c.comment %>
+  <div class="row d-flex flex-column">
+    <div class="d-flex justify-content-start">
+      <em class="mark"><%= c.user.nickname %>:</em>
+      <%= c.comment %>
 
-    <% if user_signed_in? %>
-      <% if current_user.id == @article.user_id || current_user.id == c.user_id %>
-        <%= button_to '削除', article_comment_path(@article, c), method: :delete %>
+      <% if user_signed_in? %>
+        <% if current_user.id == @article.user_id || current_user.id == c.user_id %>
+          <%= button_to '削除', article_comment_path(@article, c), method: :delete, class:"btn btn-danger btn-sm ml-4" %>
+        <% end %>
       <% end %>
-    <% end %>
-  </p>
-
+    </div>
+  </div>
 <% end %>
