@@ -1,6 +1,6 @@
 <body class="container-fluid">
 
-  <div id="nain_visual" class="container carousel slide" style="padding-top:12px" data-ride="carousel">
+  <div id="main_visual" class="container carousel slide carousel-fade" style="padding-top:12px" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#main_visual" data-slide-to="0" class="active"></li>
       <li data-target="#main_visual" data-slide-to="1"></li>
@@ -8,7 +8,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= image_tag"diary_image.jpeg", class:"img-fluid", alt:"日記イメージ"%>
+        <%= image_tag"diary_image.jpeg", class:"img-fluid d-block w-100", alt:"日記イメージ"%>
         <div class="carousel-caption d-none d-md-block">
           <h1 class="display-3 text-primary text-nowrap">日記を書いてみませんか？</h1>
           <p class="lead">-1日を思い出すことで記憶を整理して脳を休める効果があります。-</p>
@@ -17,7 +17,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <%= image_tag"calendar_image.png", class:"img-fluid", alt:"カレンダーイメージ"%>
+        <%= image_tag"calendar_image.png", class:"img-fluid d-block w-100", alt:"カレンダーイメージ"%>
         <div class="carousel-caption d-none d-md-block">
           <h1 class="display-3">予定をまとめて管理</h1>
           <p class="lead">-Comming Soon-</p>
@@ -26,7 +26,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item">
-        <%= image_tag"share_image.webp", class:"img-fluid", alt:"シェアイメージ"%>
+        <%= image_tag"share_image.webp", class:"img-fluid d-block w-100", alt:"シェアイメージ"%>
         <div class="carousel-caption d-none d-md-block">
           <h1 class="display-3">日常をシェアし、交流しよう</h1>
           <p class="lead">-Comming Soon-</p>
@@ -47,7 +47,7 @@
     <div class="nav nav-tabs" role="tablist">
       <a class="nav-item nav-link active" id="diary-tab" data-toggle="tab" href="#diary" role="tab" aria-controls="diary" aria-selected="true">
         Diary</a>
-      <a class="nav=item nav-link active" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true">
+      <a class="nav=item nav-link" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="true">
         Carendar</a>
     </div>
     <div class="tab-content" id="myTabContent">
