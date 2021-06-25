@@ -1,19 +1,12 @@
-<%= form_with( model: @article, local: true ) do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
+<body class="bg-info">
 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <div style="padding-top:12px" class="container">
+    <h1 class="display-4">新規投稿</h1>
+    <p class="text-center">新規投稿の際は、こちらのフォームをご利用ください。</p>
+  </div>
 
-  <p>
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </p>
+  <div class="py-3">
+    <%=render 'shared/form'%>
+  </div>
+</body>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', root_path %>

@@ -22,6 +22,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @article.comments
   end
 
   def edit
@@ -37,10 +39,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     if @article.destroy
-      redirect_to root_path
-      else
-        render :show
-      end
+      redirect_to root_path, notice: "削除が完了しました"
+    else
+      render :show, alert: "削除が失敗しました"
+    end
   end
 
 

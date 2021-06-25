@@ -1,0 +1,22 @@
+  <div class="container">
+    <div class=" bg-light" style="padding-bottom:550px">
+      <p class="h2 text-center "><投稿履歴></p>
+      <% if user_signed_in? %>
+        <% @articles.each do |article| %>
+          <% if article.user_id == current_user.id %>
+            <ul id="newlist" class="flex-column mb-2 ml-3 ">
+              <li class="nav-item">
+                <%= link_to article.title, article_path(article), class: "nav-link active text-truncate" %>
+              </li>
+            </ul>
+          <% end %>
+        <% end %>
+      <% else %>
+        <div class="text-center">
+          <p class="h5">-ログイン後閲覧できます-</p>
+          <%= link_to "ログイン", new_user_session_path, class: "nav-link btn btn-primary mx-5" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
