@@ -1,24 +1,29 @@
   <div class="container">
-    <nav class="nav bg-dark">
-      <a class="nav-link" href="#">新着一覧</a>
-      <a class="nav-link" href="#">投稿履歴</a>
-    </nav>
-  </div>
-  <div class="container">
-    <div class=" bg-light">
-      <p class="h2 text-center"><新着記事></p>
-        <% @articles.each do |article| %>
-        <ul id="newlist" class="flex-column mb-2 ml-3 ">
-          <li class="nav-item">
-            <%= link_to article.title, article_path(article), class: "nav-link active text-truncate" %>
-          </li>
-        </ul>
-      <% end %>
+    <div class="nav nav-tabs bg-dark text-right" role="tablist">
+      <a class="nav-item nav-link active" id="dmain-tab" data-toggle="tab" href="#dmain" role="tab" aria-controls="dmain" aria-selected="true">
+        メイン</a>
+      <a class="nav-item nav-link" id="dnew-tab" data-toggle="tab" href="#dnew" role="tab" aria-controls="dnew" aria-selected="true">
+        新着一覧</a>
+      <a class="nav-item nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">
+        投稿履歴</a>
+      <a class="nav-item nav-link" id="friend-tab" data-toggle="tab" href="#friend" role="tab" aria-controls="friend" aria-selected="true">
+        友達リスト</a>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane fade show active border border-top-0" id="dmain" role="tabpanel" aria-labelledby="dmain-tab">
+        <%= render 'shared/dmain'%>
+      </div>
+      <div class="tab-pane fade show border border-top-0" id="dnew" role="tabpanel" aria-labelledby="dnew-tab">
+        <%= render 'shared/dnew'%>
+      </div>
+      <div class="tab-pane fade show border border-top-0" id="history" role="tabpanel" aria-labelledby="history-tab">
+        <%= render 'shared/history'%>
+      </div>
+      <div class="tab-pane fade show border border-top-0" id="friend" role="tabpanel" aria-labelledby="friend-tab">
+        <%= render 'shared/friend'%>
+      </div>
+
     </div>
   </div>
-  <div class="container">
-    <div class=" bg-light" style="padding-bottom:550px">
-      <p class="h2 text-center"><投稿履歴></p>
-    </div>
-  </div>
+
 

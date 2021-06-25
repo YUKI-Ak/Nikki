@@ -1,0 +1,12 @@
+  <div class="container">
+    <div class=" bg-light">
+      <p class="h2 text-center"><新着記事></p>
+        <% @articles.each do |article| %>
+        <ul id="newlist" class="flex-column mb-2 ml-3 ">
+          <li class="nav-item">
+            <%= link_to article.title, article_path(article), class: "nav-link active text-truncate" %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
