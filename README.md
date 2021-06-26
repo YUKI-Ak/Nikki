@@ -7,10 +7,20 @@ Nikki
 - 日々の日記やメモを作成・公開ができます。
 
 # URL
-未実装
+35.74.229.17
 
 # テスト用アカウント
-未実装
+## Basic認証
+ユーザー名: admin   
+パスワード: 32499
+
+## アカウント①
+Email: test@exmple   
+パスワード: test123
+
+## アカウント②
+Email: test@com  
+パスワード: test123
 
 # 利用方法
 - 新規登録にてアカウント作成後、ログインします。
@@ -89,6 +99,12 @@ MySQL, SequelPro
 
 ## インフラ
 AWS(EC2), Capistrano
+
+## Webサーバ（本番環境）
+Nginx
+
+## アプリケーションサーバ（本番環境）
+unicorn
 
 ## ソース管理
 GitHub, GitHubDesktop
