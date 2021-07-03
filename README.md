@@ -58,6 +58,7 @@ Email: test@com
 
 - has_many :articles
 - has_many :comments
+- belongs_to :profile
 
 ## article テーブル
 
@@ -79,13 +80,27 @@ Email: test@com
 | Column           | Type         | Options                        |
 | ---------------- | ------------ | ------------------------------ |
 | comment          | text         | null: false, limit:200         |
-| user             | references   | null: false, foreign_key:true  |
 | article          | references   | null: false, foreign_key:true  |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :article
+
+## profile テーブル
+
+| Column                  | Type       | Options                           |
+| ----------------------- | -----------| --------------------------------- |
+| about_me                | string     | null: false                       |
+| sns_id                  | integer    |                                   |
+| sns_address             | text       |                                   |
+| user                    | references | null: false, foreign_key:true     |
+
+<!-- imageはActiveStorageにて実装予定 -->
+### Association
+
+- belongs_to :user
+
 
 # 使用技術（開発環境）
 ## バックエンド
