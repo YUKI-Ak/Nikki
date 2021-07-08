@@ -17,7 +17,7 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <font style="vertical-align: inherit;">
-            <%= link_to current_user.nickname, profile_path, class: "nav-link" %>
+            <%= link_to current_user.nickname, profile_path(@articles), class: "nav-link" %>
           </font>
         </li>
         <li class="nav-item">
